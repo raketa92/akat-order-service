@@ -1,10 +1,3 @@
-import { Sequelize } from 'sequelize';
+import Order from "./order";
 
-const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + './../config/dbConfig.js')[env];
-
-const  sequelize = config.url
-  ? new Sequelize(config.url, config)
-  : new Sequelize(config.database, config.username, config.password, config);
-
-export { Sequelize, sequelize };
+export { Order }
