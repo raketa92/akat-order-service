@@ -18,8 +18,8 @@ import Cart from "./cart";
     declare cartId: ForeignKey<Cart["id"]>;
     declare productId: string;
     declare quantity: number;
-    declare shippingType: string;
-    declare shippingPriceAmount: number;
+    declare shippingType: CreationOptional<string>;
+    declare shippingPriceAmount: CreationOptional<number>;
     declare currency: string;
     
     declare readonly createdAt: CreationOptional<Date>;

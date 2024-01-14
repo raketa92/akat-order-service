@@ -22,7 +22,7 @@ import CartItems from "./cartItems";
     declare readonly createdAt: CreationOptional<Date>;
     declare readonly updatedAt: CreationOptional<Date>;
 
-    declare CartItems: NonAttribute<CartItems>;
+    declare CartItems: NonAttribute<CartItems[]>;
   }
   
   Cart.init(

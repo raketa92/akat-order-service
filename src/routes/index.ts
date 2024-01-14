@@ -2,10 +2,8 @@ import logger from "../utils/logger";
 import responser from "../utils/responser";
 import {Router, Request, Response, NextFunction} from "express";
 import { getLang } from "../utils/language";
-// const { MESSAGES } = require("../../api/messages");
-//import routes
-// const paymentForRoute = require("./paymentFor");
 import orderRoutes from "./order.route";
+import cartRoutes from "./cart.route.ts";
 import { urlNotFound } from "../messages";
 
 const router = Router();
@@ -25,6 +23,7 @@ router.get("/", async (req: Request, res: Response, next: NextFunction) => {
 });
 
 router.use("/", orderRoutes);
+router.use("/", cartRoutes);
 
 router.use((req: Request, res: Response, next: NextFunction) => {
   const lang = getLang(req.query.lang as string);
@@ -40,7 +39,7 @@ router.use((e: ICommonError, req: Request, res: Response, next: NextFunction) =>
   res.json(
     responser({
       data: e.data,
-      message: e.reason || "uncaught error/exception in app.js --> order-service",
+      message: e.reason || "uncaught error/exception --> order-service",
       error: e.error,
     })
   );

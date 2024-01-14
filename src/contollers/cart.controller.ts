@@ -1,44 +1,70 @@
 import logger from "../utils/logger";
 import { getLang } from "../utils/language";
-// const { MESSAGES } = require("../messages");
 import { Request, Response, NextFunction } from "express";
-import { sequelize } from "../models/connect";
-
 import responser from "../utils/responser";
-import * as orderService from "../services/orderService";
-import { createOrderSchema } from "../schemas/orderSchema";
+import * as cartService from "../services/cartService";
+import { addToCartSchema, updateCartSchema } from "../schemas/cartSchema";
 import validate from "../utils/validate";
 
-const getOrders = async (req: Request, res: Response, next: NextFunction) => {
+const getCartItems = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const orders = await orderService.getAllByFilters({});
-        res.json(responser({ data: orders }));
+        const userId = req.userData?.userId;
+        const cart = await cartService.getCartItems({ userId });
+        res.json(responser({ data: cart }));
     } catch (e) {
         next({ e });
     }
 };
 
-const getOrderById = async (req: Request, res: Response, next: NextFunction) => {
-    try {
-        const lang = getLang(req.query.lang as string);
-        const orderId = req.params.id;
-        const orders = await orderService.getById(orderId, lang);
-        res.json(responser({ data: orders }));
-    } catch (e) {
-        next({ e });
-    }
-};
-
-const createOrder = async (req: Request, res: Response, next: NextFunction) => {
+const addToCart = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const lang = getLang(req.query.lang as string);
-        const body = await validate(req.body, createOrderSchema);
-        const orders = await orderService.getById(orderId, lang);
-        res.json(responser({ data: orders }));
+        const body = await validate(req.body, addToCartSchema);
+        const userId = req.userData?.userId;
+        const cart = await cartService.addToCart({
+            productId: body.productId,
+            storeId: body.storeId,
+            userId: userId!,
+            quantity: 1,
+            shippingType: body.shippingType,
+            shippingPriceAmount: body.shippingPriceAmount,
+        }, lang);
+        res.json(responser({ data: cart }));
     } catch (e) {
         next({ e });
     }
 };
 
+const updateCart = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const lang = getLang(req.query.lang as string);
+        const body = await validate(req.body, updateCartSchema);
+        const userId = req.userData?.userId;
+        const cart = await cartService.updateCart({
+            productId: body.productId,
+            storeId: body.storeId,
+            userId: userId!,
+            quantity: body.quantity,
+        }, lang);
+        res.json(responser({ data: cart }));
+    } catch (e) {
+        next({ e })
+    }
+}
 
-export { getOrders, getOrderById }
+const deleteCartItem = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const lang = getLang(req.query.lang as string);
+        const {productId, cartId} = req.params;
+        const cart = await cartService.deleteCartItem({
+            productId,
+            cartId,
+        }, lang);
+        res.json(responser({ data: cart }));
+    } catch (e) {
+        next({ e })
+    }
+}
+
+
+export { getCartItems, addToCart, updateCart, deleteCartItem }

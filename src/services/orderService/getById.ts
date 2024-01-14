@@ -10,7 +10,7 @@ const getById = async (orderId: string, lang: string): Promise<Order> => {
         });
 
         if (!order) {
-            throw ({ reason: orderNotFound(lang), status: 200 })
+            throw ({ reason: orderNotFound(lang), status: 404 })
         }
 
         return order;

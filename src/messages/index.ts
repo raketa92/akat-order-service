@@ -33,3 +33,16 @@ export const orderNotFound = (lang: string) => {
             return "Заказ не найден"
     }
 }
+
+
+export const cartNotFound = (lang: string) => {
+    switch (lang) {
+        case "en":
+            return "Cart not found";
+        case "tk":
+            return "Sebet tapylmady";
+    
+        default:
+            return "Корзина не найден"
+    }
+}
