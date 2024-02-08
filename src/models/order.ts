@@ -31,12 +31,9 @@ import OrderItems from "./orderItems";
     declare priceAmount: number;
     declare discountAmount: number;
     declare totalAmount: number;
-    declare token: CreationOptional<string>;
-    declare checkoutToken: CreationOptional<string>;
     declare fullName: CreationOptional<string>;
     declare contactPhone: CreationOptional<string>;
     declare languageCode: CreationOptional<string>;
-    declare isPaid: CreationOptional<boolean>;
     declare note: CreationOptional<string>;
     
     declare readonly createdAt: CreationOptional<Date>;
@@ -114,12 +111,6 @@ import OrderItems from "./orderItems";
         type: DataTypes.DECIMAL(12, 2),
         allowNull: false,
       },
-      token: {
-        type: DataTypes.STRING,
-      },
-      checkoutToken: {
-        type: DataTypes.STRING,
-      },
       fullName: {
         type: DataTypes.STRING,
       },
@@ -128,9 +119,6 @@ import OrderItems from "./orderItems";
       },
       languageCode: {
         type: DataTypes.STRING,
-      },
-      isPaid: {
-        type: DataTypes.BOOLEAN,
       },
       note: {
         type: DataTypes.STRING,

@@ -1,0 +1,45 @@
+// https://market.akat.com.tm/api/v3/checkout/my/add-to-cart/43c2d018-d83d-49ed-b7f5-a4441b7b9475/?lang=ru&shipping_type=air
+// https://market.akat.com.tm/api/v3/checkout/my/add-to-cart/${productId}/?lang=ru&shipping_type=air
+
+// response
+{
+    "id": 1655,
+    "price": {
+        "amount": 32.2,
+        "currency": "TMT"
+    },
+    "price_with_discount": {
+        "amount": 32.2,
+        "currency": "TMT"
+    },
+    "discount": {
+        "amount": 0,
+        "currency": "TMT"
+    },
+    "shipping_price": {
+        "amount": 160,
+        "currency": "TMT"
+    },
+    "shipping_type": {
+        "value": "air",
+        "label": "on air"
+    },
+    "product": {
+        "id": "43c2d018-d83d-49ed-b7f5-a4441b7b9475",
+        "slug": "coolstring-90-110cm-length",
+        "sku": "ae-3256804659149566-193-201336100",
+        "title": "Coolstring Диапазон длины 90-110 см. Экспрессия Cordon 12,5 см. Фиксированная фиксированная телефонная линия веревка.",
+        "min_limit": 1,
+        "available": 99,
+        "price": {
+            "amount": 32.2,
+            "currency": "TMT"
+        },
+        "discount": {
+            "amount": 0,
+            "currency": "TMT"
+        },
+        "image": "https://ae01.alicdn.com/kf/S6351c0d97a964ce1ae6c7ed8b7c42746m/Coolstring-90-110CM-Length-Range-Extend-Cordon-12-5CM-Fixed-Curly-Type-Telephone-Line-Rope-Excellent.jpg_600x600.jpg"
+    },
+    "quantity": 1
+}

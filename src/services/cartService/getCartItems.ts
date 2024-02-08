@@ -13,8 +13,8 @@ const getCartDataByFilters = async (filters: Filters): Promise<Cart | null> => {
         const { anonymous_token, userId, id } = filters;
         let condition = {};
         if (anonymous_token) condition = { anonymous_token };
-        if (userId) condition = { ...condition, anonymous_token };
-        if (id) condition = { ...condition, anonymous_token };
+        if (userId) condition = { ...condition, userId };
+        if (id) condition = { ...condition, id };
     
         const cart = await Cart.findOne({
             order: [["id", "DESC"]],

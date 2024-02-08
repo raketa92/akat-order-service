@@ -27,7 +27,7 @@ import Order from "./order";
     declare shippingType: string;
     declare logisticCode: string;
     declare productLink: string;
-    declare deliveryStatus: string;
+    declare deliveryStatus: CreationOptional<string>;
     
     declare readonly createdAt: CreationOptional<Date>;
     declare readonly updatedAt: CreationOptional<Date>;

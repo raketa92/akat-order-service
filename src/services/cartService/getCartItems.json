@@ -1,0 +1,120 @@
+// https://market.akat.com.tm/api/v3/checkout/my/9c5eb265-ec64-40d5-9387-c47046303928/detail/?lang=ru
+
+// response:
+{
+    "id": "9c5eb265-ec64-40d5-9387-c47046303928",
+    "store": {
+        "id": "7b3dec77-7ee7-4374-bb90-8fde295a33a2",
+        "slug": "akatexpress",
+        "name": "AkatExpress",
+        "payment_types": [
+            {
+                "value": 2,
+                "label": "Наличные"
+            },
+            {
+                "value": 1,
+                "label": "Карта"
+            }
+        ],
+        "delivery_times": [
+            {
+                "id": 53,
+                "start": "09:00",
+                "end": "20:00"
+            }
+        ],
+        "image": "store_1648453113563.webp"
+    },
+    "lines": [
+        {
+            "id": 1655,
+            "price": {
+                "amount": 32.2,
+                "currency": "TMT"
+            },
+            "price_with_discount": {
+                "amount": 32.2,
+                "currency": "TMT"
+            },
+            "discount": {
+                "amount": 0,
+                "currency": "TMT"
+            },
+            "shipping_price": {
+                "amount": 160,
+                "currency": "TMT"
+            },
+            "shipping_type": {
+                "value": "air",
+                "label": "on air"
+            },
+            "product": {
+                "id": "43c2d018-d83d-49ed-b7f5-a4441b7b9475",
+                "slug": "coolstring-90-110cm-length",
+                "sku": "ae-3256804659149566-193-201336100",
+                "title": "Coolstring 90-110CM Length Range Extend Cordon 12.5CM Fixed Curly Type Telephone Line Rope Excellent Ductility Undefined Trendy",
+                "min_limit": 1,
+                "available": 99,
+                "price": {
+                    "amount": 32.2,
+                    "currency": "TMT"
+                },
+                "discount": {
+                    "amount": 0,
+                    "currency": "TMT"
+                },
+                "image": "https://ae01.alicdn.com/kf/S6351c0d97a964ce1ae6c7ed8b7c42746m/Coolstring-90-110CM-Length-Range-Extend-Cordon-12-5CM-Fixed-Curly-Type-Telephone-Line-Rope-Excellent.jpg_600x600.jpg"
+            },
+            "quantity": 1
+        }
+    ],
+    "price": {
+        "amount": 32.2,
+        "currency": "TMT"
+    },
+    "delivery_price": {
+        "amount": 0,
+        "currency": "TMT"
+    },
+    "shipping_price": {
+        "amount": 160,
+        "currency": "TMT"
+    },
+    "discount": {
+        "amount": 0,
+        "currency": "TMT"
+    },
+    "total": {
+        "amount": 192.2,
+        "currency": "TMT"
+    },
+    "customer": {
+        "id": "77c1b9c4862a45debb565be155aff359",
+        "full_name": "Anonymous user",
+        "address": "",
+        "is_authenticated": false
+    },
+    "cart_providers": [
+        {
+            "value": 1,
+            "label": "Rysgal bank"
+        },
+        {
+            "value": 2,
+            "label": "Halk bank"
+        },
+        {
+            "value": 5,
+            "label": "Turkmenistan bank"
+        },
+        {
+            "value": 6,
+            "label": "Dayhan bank"
+        },
+        {
+            "value": 7,
+            "label": "Turkmen-Tuk bank"
+        }
+    ]
+}

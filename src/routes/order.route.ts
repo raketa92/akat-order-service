@@ -1,25 +1,19 @@
 import { Router } from "express";
-// const auth = require("../middleware/authMiddleware");
-
-// const { validate, cardProviderValidator } = require("../middleware/validators");
-
-// const cardProviderController = require("../controllers/cardProviderController");
 import { getOrders, getOrderById } from "../contollers/order.controller";
-
-// const ROLES = require("../../utils/role").getRoles();
+import { verify } from "../middleware/authMiddleware";
+import { ROLES } from "../utils/role";
 
 const orderRoutes = Router();
 
 // path: [/order]
 orderRoutes.get(
     "/order",
-    // auth.verify, 
+    verify,
     getOrders
 );
 orderRoutes.get(
     "/order/:id",
-    //   auth.verify,
-    //   auth.hasAnyRole([ROLES.moderator, ROLES.admin, ROLES.service_internal]),
+    verify,
     getOrderById
 );
 // orderRoutes.put(

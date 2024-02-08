@@ -46,3 +46,39 @@ export const cartNotFound = (lang: string) => {
             return "Корзина не найден"
     }
 }
+
+export const userIdEmpty = (lang: string) => {
+    switch (lang) {
+        case "en":
+            return "userId empty";
+        case "tk":
+            return "userId boś";
+    
+        default:
+            return "userId пустой"
+    }
+}
+
+export const userNotFound = (lang: string) => {
+    switch (lang) {
+        case "en":
+            return "User not found";
+        case "tk":
+            return "Ulanyjy tapylmady";
+    
+        default:
+            return "Пользователь не найден"
+    }
+}
+
+export const invalidCartProducts = (lang: string) => {
+    switch (lang) {
+        case "en":
+            return "Cart products are not valid";
+        case "tk":
+            return "Sebetin produktlary yalnys";
+    
+        default:
+            return "Продукты корзины невалидные"
+    }
+}

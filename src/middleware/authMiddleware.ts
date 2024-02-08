@@ -33,7 +33,7 @@ const hasAnyRole = (roleIds: number[]) => {
         try {
             if (!req.userData) await Promise.reject();
             const user = req.userData;
-            const foundAnyRole = roleIds?.some((s) => user?.roleId === s);
+            const foundAnyRole = roleIds?.some((id) => user?.roleId === id);
             foundAnyRole ? next() : await Promise.reject();
         } catch (e) {
             return res.status(403).json(responser({ message: "Access Denied" }));

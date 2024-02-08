@@ -10,6 +10,7 @@ export const createOrderSchema = yup.object({
     note: yup.string(),
     store_id: yup.string().uuid('Store ID must be a valid UUID').required('Store ID is required'),
     delivery_time_id: yup.number(),
+    cartId: yup.number().required('cartId is required')
 });
 
 

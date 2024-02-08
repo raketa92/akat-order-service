@@ -1,10 +1,6 @@
 import { Router } from "express";
 import { verify } from "../middleware/authMiddleware";
-import {getRoles} from "../utils/role";
 import { addToCart, deleteCartItem, getCartItems, updateCart } from "../contollers/cart.controller";
-
-
-const ROLES = getRoles();
 
 const cartRoutes = Router();
 
